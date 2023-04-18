@@ -32,15 +32,14 @@
       "responses": ["Happy to help!", "Any time!", "My pleasure"]
     },
     {
-      "tag": "items",
+      "tag": "Courses",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
+        "Which Courses do you have?",
+        "What kinds of courses are there?",
         "What do you sell?"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "We are a courses platform, we have have courses in Computer science, marketing, PR, Graphic"
       ]
     },
     {
@@ -57,28 +56,44 @@
       ]
     },
     {
-      "tag": "delivery",
+      "tag": "general information",
       "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
+        "How many courses can i enroll in?",
+        "Can i unenroll from a course?",
+        "Will i receive a certificate after completion?"
+
       ],
       "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
+        "For general information answers you can visit our FAQ page http://www.127.0.0.1:8000/faq"
       ]
     },
     {
       "tag": "prices",
       "patterns":[
-        "How much for a course?",
-        "Do you accept financial aid?",
-        "How can i contact the admin?"
+        "How much for a course?"
       ],
       "responses": [
-        "Usually a course starts at 9.99$",
-        "We accept Financial aid",
-        "You can contact them through admin@site.com"
+        "Usually a course starts at 9.99$"
+      ]
+    },
+    {
+      "tag": "Contact",
+      "patterns":[
+        "How can i contact sales team?",
+        "How can i contact the website admin?",
+        "Is there any telephone number or e-mail to contact support?"
+      ],
+      "responses": [
+        "You can contact the support team through support@site.com, or contact the website admin through admin@site.com"
+      ]
+    },
+    {
+      "tag": "Financial aid",
+      "patterns":[
+        "Do you accept financial aid?"
+      ],
+      "responses": [
+        "Yes, we provide financial aid, you need to fill this form with information about you then our sales team will contact you"
       ]
     },
     {
@@ -95,3 +110,4 @@
     }
   ]
 }
+
