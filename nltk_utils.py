@@ -1,17 +1,27 @@
 import numpy as np
 import nltk
+from nltk.corpus import words
+from spellchecker import SpellChecker
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
-
+spell = SpellChecker()
+english_vocab = set(words.words())
 
 def tokenize(sentence):
-    """
-    split sentence into array of words/tokens
-    a token can be a word or punctuation character, or number
-    """
-    return nltk.word_tokenize(sentence)
+    # Split sentence into tokens
+    tokens = nltk.word_tokenize(sentence)
 
+    # Correct misspelled words
+    corrected_tokens = set()
+    for token in tokens:
+        if token not in english_vocab:
+            corrected_token = spell.correction(token)
+            corrected_tokens.add(corrected_token)
+        else:
+            corrected_tokens.add(token)
+
+    return list(corrected_tokens)
 
 def stem(word):
     """
@@ -21,8 +31,10 @@ def stem(word):
     words = [stem(w) for w in words]
     -> ["organ", "organ", "organ"]
     """
-    return stemmer.stem(word.lower())
-
+    if word is not None:
+        return stemmer.stem(word.lower())
+    else:
+        return None
 
 def bag_of_words(tokenized_sentence, words):
     """
